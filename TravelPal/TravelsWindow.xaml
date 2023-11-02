@@ -7,6 +7,36 @@
         mc:Ignorable="d"
         Title="TravelsWindow" Height="450" Width="800">
     <Grid>
+
         
+        <!-- Valde att använda pages istället för att öppna
+             och stäng fönster om och om igen -->
+        <StackPanel Orientation="Horizontal" Height="40" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+            <Button
+                Content="Travels"
+                FontSize="18"
+                MinWidth="125"
+                Margin="410, 0, 0, 0"
+                Click="Button_Click_Travels"/>
+            <Button
+                Content="Add Travels"
+                FontSize="18"
+                MinWidth="125"
+                Margin="5,0,5,0"
+                Click="Button_Click_AddTravels"/>
+            <Button
+                Content="Travel Details"
+                FontSize="18"
+                MinWidth="125"
+                Click="Button_Click_TravelDetails"/>
+        </StackPanel>
+        <Frame x:Name="TravelsWindowMain" Margin="0,40,0,0" NavigationUIVisibility="Hidden"/>
+
+        <TextBlock
+            Text="User: "
+            Margin="20,10,400,0"
+            VerticalAlignment="Top"
+            FontWeight="Bold"
+            FontSize="18"/>
     </Grid>
 </Window>

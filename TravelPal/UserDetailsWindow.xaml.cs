@@ -18,7 +18,7 @@ namespace TravelPal
             // + users: List<IUser>
             public static List<IUser> Users { get; set; } = new()
             {
-                new User("test", "password", "Sweden"),
+                new User("testing", "password", "Sweden"),
                 new Admin("placeholder", "password", "Sweden"),
             };
             // + signedInUser: IUser
@@ -52,8 +52,8 @@ namespace TravelPal
         }
         public class User : IUser
         {
-            // + travels: List<Travel>
             // public static List<Travel> travel { get; set; } = new();
+
 
 
             [SetsRequiredMembers]

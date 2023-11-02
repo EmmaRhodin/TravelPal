@@ -39,7 +39,11 @@ namespace TravelPal
             {
                 string username = txtbxUsername.Text;
                 string password = txtbxPassword.Text;
+
             }
+            Window travelsWindow = new TravelsWindow();
+            travelsWindow.Show();
+            this.Close();
 
         }
 
