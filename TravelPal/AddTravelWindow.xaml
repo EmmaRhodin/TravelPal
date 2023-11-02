@@ -9,10 +9,192 @@
       Title="AddTravelWindow">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition
+                Width="25"/>
+            <ColumnDefinition
+                Width="225"/>
+            <ColumnDefinition
+                Width="25"/>
+            <ColumnDefinition
+                Width="100"/>
+            <ColumnDefinition
+                Width="25"/>
+            <ColumnDefinition
+                Width="200"/>
+            <ColumnDefinition
+                Width="50"/>
+            <ColumnDefinition
+                Width="100"/>
+            <ColumnDefinition
+                />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition
+                />
+            <RowDefinition
+                />
+            <RowDefinition
+                />
+            <RowDefinition
+                />
+            <RowDefinition
+                />
+            <RowDefinition
+                />
+            <RowDefinition
+                />
+            <RowDefinition
+                />
+        </Grid.RowDefinitions>
+
+        <Rectangle Grid.RowSpan="100"
+            Grid.ColumnSpan="100"
+            Width="800"
+            Height="410">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="White"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        
         <TextBlock 
-            Text="ADDTRAVELSWINDOW"
+            Text="Create new travel"
+            Foreground="MediumSlateBlue"
+            FontSize="26"
+            FontWeight="Bold"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Grid.ColumnSpan="2"
+            Grid.Column="1"/>
+        
+        <TextBlock 
+            Text="Departing from:"
+            Foreground="MediumSlateBlue"
+            FontSize="16"
+            FontWeight="Bold"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Grid.ColumnSpan="2"
+            Grid.Column="1"
+            Grid.Row="1"/>
+        <TextBlock 
+            Text="Passengers"
+            Foreground="MediumSlateBlue"
+            FontSize="16"
+            FontWeight="Bold"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Bottom"
+            Grid.ColumnSpan="1"
+            Grid.Column="3"
+            Grid.Row="1"/>
+        <TextBlock 
+            Text="Type of trip:"
+            Foreground="MediumSlateBlue"
+            FontSize="16"
+            FontWeight="Bold"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Grid.ColumnSpan="2"
+            Grid.Column="5"
+            Grid.Row="1"/>
+        <TextBlock 
+            Name="txtAllInclusive"
+            Foreground="MediumSlateBlue"
+            Visibility="Visible"
+            Text="All-inclusive?"
+            FontSize="16"
+            FontWeight="Bold"
+            Grid.ColumnSpan="2"
+            Margin="0,11,0,0"
+            Grid.Column="7"
+            Grid.Row="2"/>
+        <TextBlock 
+            Name="txtMeetingDetails"
+            Foreground="MediumSlateBlue"
+            Visibility="Visible"
+            Text="Meeting details:"
+            FontSize="16"
+            FontWeight="Bold"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Grid.ColumnSpan="2"
+            Grid.Column="5"
+            Grid.Row="3"/>
+        <TextBlock 
+            Text="Destination:"
+            Foreground="MediumSlateBlue"
+            FontSize="16"
+            FontWeight="Bold"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Grid.ColumnSpan="2"
+            Grid.Column="1"
+            Grid.Row="3"/>
+
+        <TextBox
+            Name="tbxPassengerNumber"
+            Foreground="MediumSlateBlue"
+            Text="1"
             FontSize="20"
+            HorizontalContentAlignment="Center"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            MinHeight="30"
+            MinWidth="50"
+            MaxWidth="50"
+            Grid.Row="2"
+            Grid.Column="3"
+            />
+        <TextBox
+            Name="tbxMeetingDetails"
+            Foreground="MediumSlateBlue"
+            FontSize="20"
+            TextWrapping="Wrap"
+            AcceptsReturn="True"
+             VerticalScrollBarVisibility="Visible"
+            Grid.Row="4"
+            Grid.Column="5"
+            Grid.ColumnSpan="3"
+            Grid.RowSpan="3"/>
+
+        <ComboBox 
+            Name="cbxDeparture"
+            Foreground="MediumSlateBlue"
+            FontSize="20"
+            Grid.Row="2"
+            Grid.Column="1"
+            VerticalAlignment="Center"/>
+        <ComboBox 
+            Name="cbxTravelType"
+            Foreground="MediumSlateBlue"
+            FontSize="20"
+            Grid.Row="2"
+            Grid.Column="5"
+            VerticalAlignment="Center"/>
+        <ComboBox 
+            Name="cbxDestination"
+            Foreground="MediumSlateBlue"
+            FontSize="20"
+            Grid.Row="4"
+            Grid.Column="1"
+            VerticalAlignment="Center"/>
+
+        <CheckBox
+            Name="ckbxAllInclusive"
+            Foreground="MediumSlateBlue"
+            Visibility="Visible"
+            Grid.Row="2"
+            Grid.Column="6"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"/>
+
+        <Button
+            Name="btnSaveTravel"
+            Foreground="MintCream"
+            Background="MediumSlateBlue"
+            Content="Save"
+            FontSize="30"
+            Grid.Column="1"
+            Grid.Row="6"/>
     </Grid>
 </Page>

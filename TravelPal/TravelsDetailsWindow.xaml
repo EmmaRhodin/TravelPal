@@ -9,6 +9,14 @@
       Title="TravelsDetailsWindow">
 
     <Grid>
+        <Rectangle Grid.RowSpan="100"
+            Grid.ColumnSpan="100"
+            Width="800"
+            Height="410">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="White"/>
+            </Rectangle.Fill>
+        </Rectangle>
         <TextBlock 
             Text="TRAVELSDETAILSWINDOW"
             FontSize="20"

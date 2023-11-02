@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TravelPal"
         mc:Ignorable="d"
-        Title="TravelsWindow" Height="450" Width="800">
+        Title="TravelsWindow" Height="450" Width="800" Background="MintCream">
     <Grid>
 
         
@@ -14,27 +14,43 @@
         <StackPanel Orientation="Horizontal" Height="40" VerticalAlignment="Top" HorizontalAlignment="Stretch">
             <Button
                 Content="Travels"
+                Background="White"
+                Foreground="MediumSlateBlue"
+                BorderBrush="MediumSlateBlue"
+                BorderThickness="2"
+                FontWeight="Bold"
                 FontSize="18"
                 MinWidth="125"
-                Margin="410, 0, 0, 0"
+                Margin="390, 0, 0, 0"
                 Click="Button_Click_Travels"/>
             <Button
                 Content="Add Travels"
+                Background="White"
+                Foreground="MediumSlateBlue"
+                BorderBrush="MediumSlateBlue"
+                BorderThickness="2"
+                FontWeight="Bold"
                 FontSize="18"
                 MinWidth="125"
                 Margin="5,0,5,0"
                 Click="Button_Click_AddTravels"/>
             <Button
                 Content="Travel Details"
+                Background="White"
+                Foreground="MediumSlateBlue"
+                BorderBrush="MediumSlateBlue"
+                BorderThickness="2"
+                FontWeight="Bold"
                 FontSize="18"
                 MinWidth="125"
                 Click="Button_Click_TravelDetails"/>
         </StackPanel>
-        <Frame x:Name="TravelsWindowMain" Margin="0,40,0,0" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="TravelsWindowMain" Margin="10,40,10,10" NavigationUIVisibility="Hidden"/>
 
         <TextBlock
             Text="User: "
-            Margin="20,10,400,0"
+            Foreground="MediumSlateBlue"
+            Margin="25,10,400,0"
             VerticalAlignment="Top"
             FontWeight="Bold"
             FontSize="18"/>

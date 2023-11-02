@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="RegisterWindow" Height="500" Width="400">
+        Title="RegisterWindow" Height="500" Width="400" Background="MintCream">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition
