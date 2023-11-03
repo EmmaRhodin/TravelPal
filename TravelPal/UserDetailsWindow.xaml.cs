@@ -23,14 +23,51 @@ namespace TravelPal
             };
             // + signedInUser: IUser
             public static IUser? CurrentlySignedInUser { get; set; }
-            /*public static IUser? RegisterUser(string username, string password) { }*/
+            public static IUser? RegisterUser(string username, string password, string country)
+            {
+                if (ValidateUsername(username))
+                {
+                    User newUser = new(username, password, country);
+                    Users.Add(newUser);
 
+                    return newUser;
+                }
+                return null;
+            }
 
             // + addUser(IUser): Bool
             // + removeUser(IUser): Void
             // + updateUserName(IUser, string): Bool
             // - validateUsername(username): Bool
+            private static bool ValidateUsername(string username)
+            {
+                bool isValidated = true;
+                foreach (var user in Users)
+                {
+                    if (user.Username == username)
+                    {
+                        isValidated = false;
+                    }
+                }
+                return isValidated;
+            }
             // + signInUser(username, password): Bool
+            public static bool UserSignIn(string username, string password)
+            {
+                foreach (var user in Users)
+                {
+                    if (user.Username == username && user.Password == password)
+                    {
+                        CurrentlySignedInUser = user;
+                        return true;
+                    }
+                }
+                return false;
+            }
+            public static void UserSignOut()
+            {
+                CurrentlySignedInUser = null;
+            }
         }
         public class IUser
         {

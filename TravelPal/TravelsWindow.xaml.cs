@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Windows;
+using static TravelPal.UserDetailsWindow;
 
 namespace TravelPal
 {
@@ -14,6 +15,8 @@ namespace TravelPal
         {
             InitializeComponent();
             TravelsWindowMain.Content = new TravelsWindowPage1();
+            string holdUsername = UserManager.CurrentlySignedInUser.Username;
+            userNameHere.Text = $"User: {holdUsername}";
         }
 
         public class TravelManager
@@ -39,7 +42,6 @@ namespace TravelPal
             public required int TravelDays { get; set; }
 
             // + Travel({Props})(virtual) + GetInfo(): string
-            // - calculateTravelDays(): int
             [SetsRequiredMembers]
             public Travel(string destination, int travellers, DateTime startDate, DateTime endDate, int travelDays)
             {

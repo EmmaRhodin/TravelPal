@@ -1,5 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 using System.Windows;
+using static TravelPal.UserDetailsWindow;
 
 namespace TravelPal
 {
@@ -23,28 +24,27 @@ namespace TravelPal
             {
                 txtErrormessage.Text = "Invalid username!";
             }
-            else if (txtbxUsername.Text != "username here")
-            {
-                txtErrormessage.Text = "Username not found";
-            }
             else if (txtbxPassword.Text.Length == 0)
             {
                 txtErrormessage.Text = "Enter password!";
-            }
-            else if (txtbxPassword.Text != "password here")
-            {
-                txtErrormessage.Text = "incorrect password, try again!";
             }
             else
             {
                 string username = txtbxUsername.Text;
                 string password = txtbxPassword.Text;
 
+                bool successfulLogIn = UserManager.UserSignIn(username, password);
+                if (successfulLogIn)
+                {
+                    Window travelsWindow = new TravelsWindow();
+                    travelsWindow.Show();
+                    this.Close();
+                }
+                else
+                {
+                    txtErrormessage.Text = "Incorrect username or password";
+                }
             }
-            Window travelsWindow = new TravelsWindow();
-            travelsWindow.Show();
-            this.Close();
-
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)

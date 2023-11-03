@@ -56,7 +56,7 @@
                 <SolidColorBrush Color="White"/>
             </Rectangle.Fill>
         </Rectangle>
-        
+
         <TextBlock 
             Text="Create new travel"
             Foreground="MediumSlateBlue"
@@ -66,7 +66,6 @@
             VerticalAlignment="Center"
             Grid.ColumnSpan="2"
             Grid.Column="1"/>
-        
         <TextBlock 
             Text="Departing from:"
             Foreground="MediumSlateBlue"
@@ -100,9 +99,9 @@
         <TextBlock 
             Name="txtAllInclusive"
             Foreground="MediumSlateBlue"
-            Visibility="Visible"
             Text="All-inclusive?"
             FontSize="16"
+            Opacity="0"
             FontWeight="Bold"
             Grid.ColumnSpan="2"
             Margin="0,11,0,0"
@@ -111,9 +110,9 @@
         <TextBlock 
             Name="txtMeetingDetails"
             Foreground="MediumSlateBlue"
-            Visibility="Visible"
             Text="Meeting details:"
             FontSize="16"
+            Opacity="0"
             FontWeight="Bold"
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
@@ -130,11 +129,74 @@
             Grid.ColumnSpan="2"
             Grid.Column="1"
             Grid.Row="3"/>
+        <TextBlock
+            Name="txtDepartingError"
+            Text=""
+            Foreground="DarkRed"
+            FontSize="16"
+            FontWeight="Bold"
+            HorizontalAlignment="Center"
+            Grid.Column="1"
+            Grid.Row="3"/>
+        <TextBlock
+            Name="txtPassengerError"
+            Text=""
+            Foreground="DarkRed"
+            FontSize="16"
+            FontWeight="Bold"
+            HorizontalAlignment="Center"
+            Grid.Column="3"
+            Grid.Row="3"/>
+        <TextBlock
+            Name="txtTypeOfTripError"
+            Text=""
+            Foreground="DarkRed"
+            FontSize="16"
+            FontWeight="Bold"
+            HorizontalAlignment="Center"
+            Grid.Column="5"
+            Grid.Row="3"/>
+        <TextBlock
+            Name="txtDestinationError"
+            Text=""
+            Foreground="DarkRed"
+            FontSize="16"
+            FontWeight="Bold"
+            HorizontalAlignment="Center"
+            Grid.Column="1"
+            Grid.Row="5"/>
 
+        <TextBox
+            Name="tbxDepartureCountry"
+            Foreground="MediumSlateBlue"
+            Text="Country"
+            FontSize="20"
+            HorizontalContentAlignment="Center"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            MinHeight="30"
+            MinWidth="100"
+            MaxWidth="100"
+            Grid.Row="2"
+            Grid.Column="1"/>
+        <TextBox
+            Name="tbxDepartureCity"
+            Foreground="MediumSlateBlue"
+            Text="City"
+            FontSize="20"
+            HorizontalContentAlignment="Center"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            MinHeight="30"
+            MinWidth="100"
+            MaxWidth="100"
+            Grid.Row="2"
+            Grid.Column="1"/>
         <TextBox
             Name="tbxPassengerNumber"
             Foreground="MediumSlateBlue"
-            Text="1"
+            Text="0"
+            MaxLength="2"
             FontSize="20"
             HorizontalContentAlignment="Center"
             HorizontalAlignment="Center"
@@ -143,27 +205,19 @@
             MinWidth="50"
             MaxWidth="50"
             Grid.Row="2"
-            Grid.Column="3"
-            />
+            Grid.Column="3"/>
         <TextBox
             Name="tbxMeetingDetails"
             Foreground="MediumSlateBlue"
             FontSize="20"
+            Opacity="0"
             TextWrapping="Wrap"
             AcceptsReturn="True"
-             VerticalScrollBarVisibility="Visible"
             Grid.Row="4"
             Grid.Column="5"
             Grid.ColumnSpan="3"
             Grid.RowSpan="3"/>
 
-        <ComboBox 
-            Name="cbxDeparture"
-            Foreground="MediumSlateBlue"
-            FontSize="20"
-            Grid.Row="2"
-            Grid.Column="1"
-            VerticalAlignment="Center"/>
         <ComboBox 
             Name="cbxTravelType"
             Foreground="MediumSlateBlue"
@@ -182,8 +236,8 @@
         <CheckBox
             Name="ckbxAllInclusive"
             Foreground="MediumSlateBlue"
-            Visibility="Visible"
             Grid.Row="2"
+            Opacity="0"
             Grid.Column="6"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"/>
@@ -195,6 +249,6 @@
             Content="Save"
             FontSize="30"
             Grid.Column="1"
-            Grid.Row="6"/>
+            Grid.Row="6" Click="btnSaveTravel_Click"/>
     </Grid>
 </Page>

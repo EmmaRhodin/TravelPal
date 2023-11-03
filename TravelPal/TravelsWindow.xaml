@@ -8,7 +8,6 @@
         Title="TravelsWindow" Height="450" Width="800" Background="MintCream">
     <Grid>
 
-        
         <!-- Valde att använda pages istället för att öppna
              och stäng fönster om och om igen -->
         <StackPanel Orientation="Horizontal" Height="40" VerticalAlignment="Top" HorizontalAlignment="Stretch">
@@ -48,6 +47,7 @@
         <Frame x:Name="TravelsWindowMain" Margin="10,40,10,10" NavigationUIVisibility="Hidden"/>
 
         <TextBlock
+            Name="userNameHere"
             Text="User: "
             Foreground="MediumSlateBlue"
             Margin="25,10,400,0"

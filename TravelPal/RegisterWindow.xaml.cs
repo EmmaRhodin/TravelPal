@@ -112,8 +112,10 @@ namespace TravelPal
                 string country = cbxChooseCountry.Text;
                 string password = txtbxCreatePassword.Text;
 
-                UserDetailsWindow.User newuser = new(username, country, password);
-                txtRegistered.Text = "Successfully registered!";
+                UserDetailsWindow.User newUser = new(username, country, password);
+                MainWindow mainWindow = new();
+                mainWindow.Show();
+                this.Close();
             }
 
         }
