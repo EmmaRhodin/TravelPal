@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using System.Windows;
+using static TravelPal.UserDetailsWindow;
 
 namespace TravelPal
 {
@@ -23,7 +24,7 @@ namespace TravelPal
             }
         }
 
-        public void btnSignIn_Click(object sender, RoutedEventArgs e)
+        public void btnSignUp_Click_SignUp(object sender, RoutedEventArgs e)
         {
             bool getUsername = false;
             bool getCountry = false;
@@ -35,9 +36,9 @@ namespace TravelPal
                 txtCreateUserError.Text = "Input username!";
                 getUsername = false;
             }
-            else if (txtbxCreateUser.Text.Length < 6 || txtbxCreateUser.Text.Length > 20)
+            else if (txtbxCreateUser.Text.Length < 4 || txtbxCreateUser.Text.Length > 15)
             {
-                txtCreateUserError.Text = "Username has to be between 6 and 20 characters!";
+                txtCreateUserError.Text = "Username has to be between 4 and 15 characters!";
                 getUsername = false;
             }
             else if (!Regex.IsMatch(txtbxCreateUser.Text, @"^[a-zA-Z0-9]+$"))
@@ -112,12 +113,21 @@ namespace TravelPal
                 string country = cbxChooseCountry.Text;
                 string password = txtbxCreatePassword.Text;
 
-                UserDetailsWindow.User newUser = new(username, country, password);
+                IUser user = new(username, country, password);
+                UserManager.Users.Add(user);
+
                 MainWindow mainWindow = new();
                 mainWindow.Show();
                 this.Close();
             }
 
+        }
+
+        private void btnBack_Click_Back(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
         }
     }
 }

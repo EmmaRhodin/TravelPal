@@ -97,5 +97,13 @@ namespace TravelPal
             TravelsWindowMain.Content = new TravelsDetailsWindow();
         }
 
+        private void Button_Click_LogOut(object sender, RoutedEventArgs e)
+        {
+            UserManager.UserSignOut();
+
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
     }
 }

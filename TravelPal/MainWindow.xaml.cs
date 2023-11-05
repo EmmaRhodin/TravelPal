@@ -1,5 +1,4 @@
-﻿using System.Text.RegularExpressions;
-using System.Windows;
+﻿using System.Windows;
 using static TravelPal.UserDetailsWindow;
 
 namespace TravelPal
@@ -20,10 +19,6 @@ namespace TravelPal
             {
                 txtErrormessage.Text = "Enter username!";
             }
-            else if (!Regex.IsMatch(txtbxUsername.Text, @"^[a-zA-Z0-9]+$") || txtbxUsername.Text.Length < 6 || txtbxUsername.Text.Length > 20)
-            {
-                txtErrormessage.Text = "Invalid username!";
-            }
             else if (txtbxPassword.Text.Length == 0)
             {
                 txtErrormessage.Text = "Enter password!";
@@ -34,7 +29,7 @@ namespace TravelPal
                 string password = txtbxPassword.Text;
 
                 bool successfulLogIn = UserManager.UserSignIn(username, password);
-                if (successfulLogIn)
+                if (successfulLogIn == true)
                 {
                     Window travelsWindow = new TravelsWindow();
                     travelsWindow.Show();

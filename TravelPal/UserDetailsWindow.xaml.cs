@@ -15,13 +15,11 @@ namespace TravelPal
         }
         public class UserManager
         {
-            // + users: List<IUser>
             public static List<IUser> Users { get; set; } = new()
             {
-                new User("testing", "password", "Sweden"),
-                new Admin("placeholder", "password", "Sweden"),
+                new User("user", "password", "Sweden"),
+                new Admin("admin", "password", "Sweden"),
             };
-            // + signedInUser: IUser
             public static IUser? CurrentlySignedInUser { get; set; }
             public static IUser? RegisterUser(string username, string password, string country)
             {
@@ -37,8 +35,6 @@ namespace TravelPal
 
             // + addUser(IUser): Bool
             // + removeUser(IUser): Void
-            // + updateUserName(IUser, string): Bool
-            // - validateUsername(username): Bool
             private static bool ValidateUsername(string username)
             {
                 bool isValidated = true;
@@ -51,7 +47,6 @@ namespace TravelPal
                 }
                 return isValidated;
             }
-            // + signInUser(username, password): Bool
             public static bool UserSignIn(string username, string password)
             {
                 foreach (var user in Users)
@@ -71,14 +66,10 @@ namespace TravelPal
         }
         public class IUser
         {
-            // + username: string
             public required string Username { get; set; }
-            // + password: string
             public required string Password { get; set; }
-            // + location: Country
             public required string Country { get; set; }
 
-            // + IUser(username, password, location)
             [SetsRequiredMembers]
             public IUser(string username, string password, string country)
             {
@@ -97,6 +88,7 @@ namespace TravelPal
             public User(string username, string password, string country) : base(username, password, country)
             {
             }
+
         }
         public class Admin : IUser
         {

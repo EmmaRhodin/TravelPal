@@ -11,6 +11,17 @@
         <!-- Valde att använda pages istället för att öppna
              och stäng fönster om och om igen -->
         <StackPanel Orientation="Horizontal" Height="40" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+            <Button 
+                Content="Log Out"
+                Background="White"
+                Foreground="MediumSlateBlue"
+                BorderBrush="MediumSlateBlue"
+                BorderThickness="2"
+                FontWeight="Bold"
+                FontSize="18"
+                MinWidth="100"
+                Margin="10,0,0,0"
+                Click="Button_Click_LogOut"/>
             <Button
                 Content="Travels"
                 Background="White"
@@ -20,7 +31,7 @@
                 FontWeight="Bold"
                 FontSize="18"
                 MinWidth="125"
-                Margin="390, 0, 0, 0"
+                Margin="280, 0, 0, 0"
                 Click="Button_Click_Travels"/>
             <Button
                 Content="Add Travels"
@@ -50,7 +61,7 @@
             Name="userNameHere"
             Text="User: "
             Foreground="MediumSlateBlue"
-            Margin="25,10,400,0"
+            Margin="120,10,10,325"
             VerticalAlignment="Top"
             FontWeight="Bold"
             FontSize="18"/>
