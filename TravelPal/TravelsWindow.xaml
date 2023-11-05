@@ -61,7 +61,7 @@
             Name="userNameHere"
             Text="User: "
             Foreground="MediumSlateBlue"
-            Margin="120,10,10,325"
+            Margin="120,10,450,0"
             VerticalAlignment="Top"
             FontWeight="Bold"
             FontSize="18"/>

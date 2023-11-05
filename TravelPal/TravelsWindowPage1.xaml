@@ -18,9 +18,12 @@
             </Rectangle.Fill>
         </Rectangle>
         <TextBlock 
-            Text="TRAVELSWINDOW"
-            FontSize="20"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"/>
+            Text="Booked travels"
+            Foreground="MediumSlateBlue"
+            FontWeight="Bold"
+            Margin="200,45,0,0"
+            FontSize="25" />
+        <ListBox 
+            Margin="200,80,200,50"/>
     </Grid>
 </Page>

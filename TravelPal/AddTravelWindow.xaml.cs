@@ -23,35 +23,13 @@ namespace TravelPal
             {
                 cbxDestination.Items.Add(country);
             }
-            if (cbxTravelType.SelectedIndex < 0)
-            {
-                if (cbxTravelType.SelectedIndex == 0)
-                {
-
-                    txtAllInclusive.Opacity = 0;
-                    tbxMeetingDetails.Opacity = 0;
-
-                    ckbxAllInclusive.Opacity = 1;
-                    txtAllInclusive.Opacity = 1;
-
-                }
-                else if (cbxTravelType.SelectedIndex == 1)
-                {
-
-                    ckbxAllInclusive.Opacity = 0;
-                    txtAllInclusive.Opacity = 0;
-
-                    txtAllInclusive.Opacity = 1;
-                    tbxMeetingDetails.Opacity = 1;
-
-                }
-            }
         }
 
         private void btnSaveTravel_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             bool allInclusive = false;
             string meetingDetails = "";
+            string travelType = "";
 
             bool getCity = false;
             bool getCountry = false;
@@ -118,18 +96,46 @@ namespace TravelPal
                 txtTypeOfTripError.Text = "Select Travel Type";
                 getTravelType = false;
             }
-            else if (cbxTravelType.SelectedIndex == 0)
+            else if (cbxTravelType.SelectedIndex >= 0)
             {
-                txtTypeOfTripError.Text = "";
-                getTravelType = true;
 
-                if (ckbxAllInclusive.IsChecked == false)
+
+                if (cbxTravelType.SelectedIndex == 0)
                 {
-                    allInclusive = false;
+                    if (ckbxAllInclusive.IsChecked == true)
+                    {
+                        txtTypeOfTripError.Text = "Worktrip can't be all inclusive";
+                        getTravelType = true;
+                    }
+                    else
+                    {
+                        txtTypeOfTripError.Text = "";
+                        getTravelType = true;
+
+                        travelType = "workTrip";
+                        meetingDetails = tbxMeetingDetails.Text;
+                    }
                 }
-                else if (ckbxAllInclusive.IsChecked == true)
+                else if (cbxTravelType.SelectedIndex == 1)
                 {
-                    allInclusive = true;
+                    if (tbxMeetingDetails.Text != "")
+                    {
+                        txtTypeOfTripError.Text = "Can't have meeting details on vacation";
+                        getTravelType = false;
+                    }
+                    else
+                    {
+                        travelType = "vacation";
+                        getTravelType = true;
+                        if (ckbxAllInclusive.IsChecked == true)
+                        {
+                            allInclusive = true;
+                        }
+                        else
+                        {
+                            allInclusive = false;
+                        }
+                    }
                 }
             }
             else if (cbxTravelType.SelectedIndex == 1)
@@ -151,11 +157,9 @@ namespace TravelPal
 
             if (getCity == true && getCountry == true && getPassenger == true && getTravelType == true && getDestination == true)
             {
-                meetingDetails = tbxMeetingDetails.Text;
                 string city = tbxDepartureCity.Text;
                 string country = tbxDepartureCountry.Text;
                 string passengers = tbxPassengerNumber.Text;
-                string travelType = cbxTravelType.Text;
                 string destination = cbxDestination.Text;
             }
         }

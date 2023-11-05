@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Windows.Controls;
+using static TravelPal.TravelsWindow;
 
 namespace TravelPal
 {
@@ -21,20 +22,18 @@ namespace TravelPal
                 new Admin("admin", "password", "Sweden"),
             };
             public static IUser? CurrentlySignedInUser { get; set; }
-            public static IUser? RegisterUser(string username, string password, string country)
+            public static IUser? AddUser(string username, string password, string country)
             {
                 if (ValidateUsername(username))
                 {
-                    User newUser = new(username, password, country);
-                    Users.Add(newUser);
+                    User user = new(username, password, country);
+                    Users.Add(user);
 
-                    return newUser;
+                    return user;
                 }
                 return null;
             }
 
-            // + addUser(IUser): Bool
-            // + removeUser(IUser): Void
             private static bool ValidateUsername(string username)
             {
                 bool isValidated = true;
@@ -80,7 +79,7 @@ namespace TravelPal
         }
         public class User : IUser
         {
-            // public static List<Travel> travel { get; set; } = new();
+            public static List<Travel> travel { get; set; } = new();
 
 
 

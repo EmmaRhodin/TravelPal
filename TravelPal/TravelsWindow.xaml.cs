@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Windows;
 using static TravelPal.UserDetailsWindow;
@@ -21,9 +20,30 @@ namespace TravelPal
 
         public class TravelManager
         {
-            public static List<Travel> travel { get; set; } = new();
+            public static List<Travel> Travels { get; set; } = new()
+            {
+                new Travel("Lund.Sweden", "France", 2, "vacation"),
+                new Travel("Bacelona.Spain", "Iceland", 1, "workTrip")
+            };
 
             // + addTravel(Travel): void
+            public static Travel? AddTravel(string departingFrom, string destination, int travellers, string travelType, bool allInclusive)
+            {
+                if (travelType == "vacation")
+                {
+                    Vacation vacation = new(departingFrom, destination, travellers, allInclusive);
+                    Travels.Add(vacation);
+
+                    return vacation;
+                }
+                else
+                {
+
+
+                    return null;
+                }
+
+            }
             // + removeTravel(Travel): void
         }
         public class Travel
@@ -31,36 +51,30 @@ namespace TravelPal
             // + destination: string
             public required string Destination { get; set; }
             // + country: Countries
+            public required string DepartingFrom { get; set; }
             // + travellers: int
             public required int Travellers { get; set; }
-            // + packingList: List<PackingListItem>
-            // + startDate: DateTime
-            public required DateTime StartDate { get; set; }
-            // + endDate: DateTime
-            public required DateTime EndDate { get; set; }
-            // + travelDays: int
-            public required int TravelDays { get; set; }
+            public required string TravelType { get; set; }
+
 
             // + Travel({Props})(virtual) + GetInfo(): string
             [SetsRequiredMembers]
-            public Travel(string destination, int travellers, DateTime startDate, DateTime endDate, int travelDays)
+            public Travel(string departingFrom, string destination, int travellers, string travelType)
             {
+                DepartingFrom = departingFrom;
                 Destination = destination;
                 Travellers = travellers;
-                StartDate = startDate;
-                EndDate = endDate;
-                TravelDays = travelDays;
+                TravelType = travelType;
             }
         }
         public class WorkTrip : Travel
         {
-            // + meetingDetails: string
             public required string MeetingDetails { get; set; }
 
             // + Trip(meetingDetails)
             // + GetInfo(): string
             [SetsRequiredMembers]
-            public WorkTrip(string destination, int travellers, DateTime startDate, DateTime endDate, int travelDays, string meetingDetails) : base(destination, travellers, startDate, endDate, travelDays)
+            public WorkTrip(string departingFrom, string destination, int travellers, string travelType, string meetingDetails) : base(departingFrom, destination, travellers, travelType)
             {
                 MeetingDetails = meetingDetails;
             }
@@ -69,12 +83,11 @@ namespace TravelPal
         {
             // + allInclusive: bool
             public required bool AllInclusive { get; set; }
-
             // + Vacation(allInclusive)
             // + GetInfo(): string
             [SetsRequiredMembers]
 
-            public Vacation(string destination, int travellers, DateTime startDate, DateTime endDate, int travelDays, bool allInclusive) : base(destination, travellers, startDate, endDate, travelDays)
+            public Vacation(string departingFrom, string destination, int travellers, string travelType, bool allInclusive) : base(departingFrom, destination, travellers, travelType)
             {
                 AllInclusive = allInclusive;
             }
