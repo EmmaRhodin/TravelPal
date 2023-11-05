@@ -79,7 +79,10 @@ namespace TravelPal
         }
         public class User : IUser
         {
-            public static List<Travel> travel { get; set; } = new();
+            public static List<Travel> Travels { get; set; } = new()
+            {
+                new Travel("Malmö.Sweden", "Greece", 2, "vacation"),
+            };
 
 
 

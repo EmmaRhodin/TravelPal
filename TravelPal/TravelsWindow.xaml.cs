@@ -73,6 +73,7 @@ namespace TravelPal
 
             // + Trip(meetingDetails)
             // + GetInfo(): string
+
             [SetsRequiredMembers]
             public WorkTrip(string departingFrom, string destination, int travellers, string travelType, string meetingDetails) : base(departingFrom, destination, travellers, travelType)
             {
@@ -92,7 +93,22 @@ namespace TravelPal
                 AllInclusive = allInclusive;
             }
         }
+        /*
+        public string GetInfo()
+        {
+            string info = $"From: {DepartingFrom}\n To: {Destination}\n Passengers: {Travellers}\n Type of booking: {TravelType}";
+            if (travelType == "vacation")
+            {
+                info += $"All-Inclusive: {AllInclusive}";
+            }
+            else
+            {
+                info += $"Meeting details:\n {MeetingDetails}";
+            }
 
+            return info();            
+        }
+        */
 
         private void Button_Click_Travels(object sender, RoutedEventArgs e)
         {
@@ -118,5 +134,6 @@ namespace TravelPal
             mainWindow.Show();
             this.Close();
         }
+
     }
 }

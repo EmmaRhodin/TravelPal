@@ -19,11 +19,18 @@ namespace TravelPal
                 item.Content = "Ticket to: " + travel.Destination;
                 lstbxBookedTravels.Items.Add(item);
             }
-
         }
         private void btnDelete_Click_Delete(object sender, System.Windows.RoutedEventArgs e)
         {
-
+            ListBoxItem selectedItem = (ListBoxItem)lstbxBookedTravels.SelectedItem;
+            if (selectedItem != null)
+            {
+                lstbxBookedTravels.Items.Remove(selectedItem);
+            }
+            else
+            {
+                // error message
+            }
         }
     }
 }
