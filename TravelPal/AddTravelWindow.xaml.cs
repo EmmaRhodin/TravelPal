@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using System.Windows.Controls;
+using static TravelPal.TravelsWindow;
 
 namespace TravelPal
 {
@@ -159,8 +160,12 @@ namespace TravelPal
             {
                 string city = tbxDepartureCity.Text;
                 string country = tbxDepartureCountry.Text;
+                string departure = city + "." + country;
                 string passengers = tbxPassengerNumber.Text;
+                int passengersInt = Convert.ToInt32(passengers);
                 string destination = cbxDestination.Text;
+
+                TravelManager.AddTravel(departure, destination, passengersInt, travelType, allInclusive, meetingDetails);
             }
         }
     }

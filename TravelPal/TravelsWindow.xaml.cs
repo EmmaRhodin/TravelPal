@@ -27,22 +27,22 @@ namespace TravelPal
             };
 
             // + addTravel(Travel): void
-            public static Travel? AddTravel(string departingFrom, string destination, int travellers, string travelType, bool allInclusive)
+            public static Travel? AddTravel(string departingFrom, string destination, int travellers, string travelType, bool allInclusive, string meetingDetails)
             {
                 if (travelType == "vacation")
                 {
-                    Vacation vacation = new(departingFrom, destination, travellers, allInclusive);
+                    Vacation vacation = new(departingFrom, destination, travellers, travelType, allInclusive);
                     Travels.Add(vacation);
 
                     return vacation;
                 }
                 else
                 {
+                    WorkTrip worktrip = new(departingFrom, destination, travellers, travelType, meetingDetails);
+                    Travels.Add(worktrip);
 
-
-                    return null;
+                    return worktrip;
                 }
-
             }
             // + removeTravel(Travel): void
         }

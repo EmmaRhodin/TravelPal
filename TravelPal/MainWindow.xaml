@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TravelPal"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="500" Width="400" MaxHeight="500" MinHeight="500" MaxWidth="400" MinWidth="400">
+        Title="MainWindow" Height="500" Width="400" ResizeMode="NoResize">
 
     <Grid>
         <Grid.ColumnDefinitions>

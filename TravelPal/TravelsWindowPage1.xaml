@@ -9,6 +9,28 @@
       Title="TravelsWindowPage1">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition
+                Width="100"/>
+            <ColumnDefinition
+                Width="400"/>
+            <ColumnDefinition
+                Width="25"/>
+            <ColumnDefinition
+                />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Height="20"/>
+            <RowDefinition
+                Height="50"/>
+            <RowDefinition
+                Height="225"/>
+            <RowDefinition
+                Height="50"/>
+            <RowDefinition
+                />
+        </Grid.RowDefinitions>
         <Rectangle Grid.RowSpan="100"
             Grid.ColumnSpan="100"
             Width="800"
@@ -17,13 +39,35 @@
                 <SolidColorBrush Color="White"/>
             </Rectangle.Fill>
         </Rectangle>
+        
         <TextBlock 
             Text="Booked travels"
             Foreground="MediumSlateBlue"
             FontWeight="Bold"
-            Margin="200,45,0,0"
-            FontSize="25" />
-        <ListBox 
-            Margin="200,80,200,50"/>
+            FontSize="25"
+            Grid.Column="1"
+            Grid.Row="1"/>
+        
+        <ListBox
+            Name="lstbxBookedTravels"
+            Grid.Column="1"
+            Foreground="MediumSlateBlue"
+            BorderBrush="MediumSlateBlue"
+            Grid.Row="2"
+            Grid.RowSpan="2"
+            Margin="0,0,0,10"
+            >
+        </ListBox>
+
+        <Button
+            Name="btnDelete"
+            Content="Delete"
+            Foreground="MediumSlateBlue"
+            Background="MintCream"
+            BorderBrush="MediumSlateBlue"
+            Click="btnDelete_Click_Delete"
+            Grid.Row="3"
+            Grid.Column="3"
+            Margin="0,10,150,10"/>
     </Grid>
 </Page>
